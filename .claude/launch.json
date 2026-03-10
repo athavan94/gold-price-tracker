@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/Users/sanga/.nvm/versions/node/v20.20.1/bin/node",
+      "runtimeArgs": ["/Users/sanga/.nvm/versions/node/v20.20.1/bin/npx", "vite", "--port", "5173"],
+      "port": 5173
+    }
+  ]
+}

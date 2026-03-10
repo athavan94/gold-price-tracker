@@ -33,10 +33,15 @@ export function usePriceHistory(days: number) {
   const [history, setHistory] = useState<ChartDataPoint[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [prevDays, setPrevDays] = useState(days)
+
+  if (prevDays !== days) {
+    setPrevDays(days)
+    setLoading(true)
+  }
 
   useEffect(() => {
     let cancelled = false
-    setLoading(true)
 
     fetchPriceHistory(days)
       .then((data) => {

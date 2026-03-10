@@ -6,7 +6,6 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  type TooltipProps,
 } from 'recharts'
 import { usePriceHistory } from '../hooks/useGoldPrice'
 
@@ -18,10 +17,9 @@ const TIME_RANGES = [
   { label: '1Y', days: 365 },
 ] as const
 
-function CustomTooltip({ active, payload }: TooltipProps<number, string>) {
+function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<{ payload: { timestamp: number; price: number } }> }) {
   if (!active || !payload?.length) return null
-  const data = payload[0]
-  const point = data.payload as { timestamp: number; price: number }
+  const point = payload[0].payload
 
   return (
     <div className="bg-zinc-900 border border-white/10 rounded-lg px-3 py-2 shadow-xl">
