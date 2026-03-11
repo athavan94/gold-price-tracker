@@ -3,9 +3,12 @@
   "configurations": [
     {
       "name": "dev",
-      "runtimeExecutable": "/Users/sanga/.nvm/versions/node/v20.20.1/bin/node",
-      "runtimeArgs": ["/Users/sanga/.nvm/versions/node/v20.20.1/bin/npx", "vite", "--port", "5173"],
-      "port": 5173
+      "runtimeExecutable": "/Users/sanga/.nvm/versions/node/v20.20.1/bin/npx",
+      "runtimeArgs": ["vite", "--port", "5173"],
+      "port": 5173,
+      "env": {
+        "PATH": "/Users/sanga/.nvm/versions/node/v20.20.1/bin:/usr/bin:/bin"
+      }
     }
   ]
 }
